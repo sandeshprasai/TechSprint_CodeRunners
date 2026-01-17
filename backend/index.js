@@ -1,9 +1,9 @@
 const express = require("express");
 const bodyparser = require("body-parser");
 const cors = require("cors");
-const cookieParser =  require('cookie-parser')
+const cookieParser = require("cookie-parser");
 const path = require("path");
-
+const authRouter = require("./routes/authRoutes");
 require("dotenv").config();
 
 const dbconenction = require("./config/dbConfig");
@@ -16,9 +16,7 @@ DataBaseConnection();
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-    ],
+    origin: ["http://localhost:5173"],
     credentials: true,
   })
 );
@@ -30,6 +28,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+app.use("/api/v1/auth", authRouter);
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
