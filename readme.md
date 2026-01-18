@@ -34,7 +34,7 @@ An integrated application where a citizen can report an accident with **one tap*
 - **Real-Time Geolocation** to identify the incident location  
 - **Instant Dispatch** to notify the nearest hospitals, police station and available ambulance providers
 - **Live Dashboard** for emergency responders to monitor and act immediately
-- **AI-Based Verification** to validate accident images (will be added based on time constraints)
+- **AI-Based Verification** to validate accident images using pretrained EfficientNet-B0 fine tuned with real data
 ---
 
 ## 🛠️ Tech Stack (MERN)
